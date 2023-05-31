@@ -12,6 +12,7 @@
 ChatBot::ChatBot()
 {
     // invalidate data handles
+    // TODO?
     _image = nullptr;
     _chatLogic = nullptr;
     _rootNode = nullptr;
