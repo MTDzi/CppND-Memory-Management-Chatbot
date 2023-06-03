@@ -52,6 +52,7 @@ ChatBot::ChatBot(const ChatBot &other)
     _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
 }
 
 ChatBot::ChatBot(ChatBot &&other)
@@ -65,6 +66,7 @@ ChatBot::ChatBot(ChatBot &&other)
     other._rootNode = nullptr;
 
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     other._chatLogic = nullptr;
 
     _currentNode = other._currentNode;
@@ -83,6 +85,7 @@ ChatBot& ChatBot::operator=(const ChatBot &other)
     _currentNode = other._currentNode;
     _rootNode = other._rootNode;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     
     return *this;
 }
@@ -105,6 +108,7 @@ ChatBot& ChatBot::operator=(ChatBot &&other)
     other._rootNode = nullptr;
 
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     other._chatLogic = nullptr;
     
     return *this;
